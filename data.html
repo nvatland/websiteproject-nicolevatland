@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Website Project - Nicole Vatland</title>
+</head>
+<body>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div"></div>
+	<!--<script>
+		 var data = google.visualization.arrayToDataTable([
+	        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+	         'Western', 'Literature', { role: 'annotation' } ],
+	        ['2010', 10, 24, 20, 32, 18, 5, ''],
+	        ['2020', 16, 22, 23, 30, 16, 9, ''],
+	        ['2030', 28, 19, 29, 30, 12, 13, '']
+	      ]);
+
+	      var options = {
+	        width: 600,
+	        height: 400,
+	        legend: { position: 'top', maxLines: 3 },
+	        bar: { groupWidth: '75%' },
+	        isStacked: true
+	      };
+	</script>-->
+	<script>
+	google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawStacked);
+
+function drawStacked() {
+      var data = google.visualization.arrayToDataTable([
+        ['Region', 'Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
+        ['South East', 14013, 18600, 23353, 20756],
+        ['North East', 24149, 13119, 23284, 12697],
+      ]);
+
+      var options = {
+        title: 'Sales by Quarter',
+        chartArea: {width: '50%'},
+        isStacked: true,
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+	</script>
+</body>
+</html>
