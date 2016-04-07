@@ -3,8 +3,8 @@ html, body {
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
-	font-family: 'Lato';
+/*	overflow-x: hidden;
+*/	font-family: 'Lato';
 }
 
 p {
@@ -13,38 +13,17 @@ p {
 }
 
 .resume {
-	padding: 10% 0;
 	width: 100vw;
+	min-height: 450px;
 }
 
 .resume-blue {
 	background-color: #59b3b9;
-	transform:rotate(-2deg);
-	width: 105vw;
-	margin-left: -10px;
 	color: #fff;
 }
 
-.resume-right {
-	transform:rotate(2deg);
-}
+#section6 {
 
-.resume-bottom {
-	background-color: #59b3b9;
-	padding: 5%;
-	margin-top: -8%;
-}
-
-.resume-contact {
-	padding: 10% 0 5%;
-}
-
-.unrotate-left {
-	transform: rotate(2deg);
-}
-
-.unrotate-right {
-	transform:rotate(-2deg);
 }
 
 .flex {
@@ -65,14 +44,116 @@ p {
 DOT NAVIGATION
 ***************************/
 
-.dots {
-	display: none;
+#dot-nav {
+	position: fixed;
+	right: 40px;
+	top: 50%;
+	bottom: auto;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
+#dot-nav a {
+	display: inline-block;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+#dot-nav a:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#dot-nav li {
+	text-align: right;
+	list-style-type: none;
+}
+
+#dot-nav a span { 
+	float: right;
+	display: inline-block;
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+	transform: scale(0.6);
+}
+
+.dot {
+	transform-origin:50% 50%;
+}
+
+#dot-nav a.is-selected .dot-label {
+	color:#96D7E2;
+}
+
+#dot-nav a.is-selected .dot {
+	background-color:#96D7E2;
+}
+
+.dot-label {
+	transform-origin:100% 50%;
+}
+
+#dot-nav a:hover span {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+#dot-nav a:hover .dot-label {
+	opacity: 1;
+}
+
+#dot-nav .dot {
+	position: relative;
+	top: 8px;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background-color: #726EA9;
+	-webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+	-moz-transition: -moz-transform 0.2s, background-color 0.5s;
+	transition: transform 0.2s, background-color 0.5s;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+#dot-nav .dot-label {
+	position: relative;
+	margin-right: 10px;
+	padding: .4em .5em;
+	color: #726EA9;
+	font-size: 14px;
+	font-size: 0.875rem;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
+	transition: transform 0.2s, opacity 0.2s;
+	opacity: 0;
+	-webkit-transform-origin: 100% 50%;
+	-moz-transform-origin: 100% 50%;
+	-ms-transform-origin: 100% 50%;
+	-o-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
 }
 
 /***************************
 LOGO
 ***************************/
+#section1 {
+	height: 85%;
 
+}
 .resume__logo {
 	width: 50%;
 }
@@ -127,6 +208,7 @@ EXPERIENCE
 
 .experience {
 	width: 75%;
+	padding: 10% 0;
 }
 
 .header-blue {
@@ -348,9 +430,3 @@ APPLIED ANIMATIONS
 	-o-animation: appear .85s .5s forwards;
 	animation: appear .85s .5s forwards;
 }
-
-
-
-
-
-
