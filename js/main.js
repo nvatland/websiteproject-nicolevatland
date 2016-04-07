@@ -13,21 +13,6 @@ jQuery(document).ready(function($){
         console.log($(this.hash));
         smoothScroll($(this.hash));
     });
-    //smooth scroll to second section
-    $('.cd-scroll-down').on('click', function(event){
-        event.preventDefault();
-        smoothScroll($(this.hash));
-    });
-
-    //open-close navigation on touch devices
-    $('.touch .cd-nav-trigger').on('click', function(){
-    	$('.touch #cd-vertical-nav').toggleClass('open');
-  
-    });
-    //close navigation on touch devices when selectin an elemnt from the list
-    $('.touch #cd-vertical-nav a').on('click', function(){
-    	$('.touch #cd-vertical-nav').removeClass('open');
-    });
 
 	function updateNavigation() {
 		contentSections.each(function(){
@@ -42,12 +27,22 @@ jQuery(document).ready(function($){
 		});
 	}
 
-	
 	function smoothScroll(target) {
         $('body,html').animate(
         	{'scrollTop':target.offset().top},
         	600
         );
 	}
+
+	$(window).scroll(function(){
+		var sticky = $('.reg-nav'),
+			scroll = $(window).scrollTop();
+			console.log(scroll);
+		if (scroll > 400) {
+			sticky.addClass('sticky');
+		} else {
+			sticky.removeClass('sticky');
+		}
+	})
 
 });
