@@ -311,6 +311,7 @@ CONTACT
 	transform: rotate(45deg);
 	background-color: rgba(255,255,255,0);
 	transition: all 0.5s;
+	text-decoration: none;
 }
 
 .contact__icon {
@@ -337,6 +338,46 @@ CONTACT
 	transform: rotate(0deg);
 }
 
+.contact:after {
+	content: "";
+	color: #fff;
+	position: relative;
+	top: 53px;
+	left: -50px;
+	font-weight: 300;
+	opacity: 0;
+	transition: all 0.6s;
+}
+
+.contact-github:after {
+	content:"github.com/nvatland";
+	left: -58px;
+}
+
+.contact-linkedin:after {
+	content: "linkedin.com/in/nicole-vatland-70a1a254";
+	white-space: nowrap;
+	left: -120px;
+}
+
+.contact-phone:after {
+	content:"952.250.0315";
+	left: -39px;
+}
+
+.contact-website:after {
+	content: "nicolevatland.com";
+}
+
+.contact-email:after {
+	content: "nicole.vatland@me.com";
+	left: -70px;
+}
+
+.contact:hover:after {
+	opacity: 1;
+	top:28px;
+}
 /***************************
 KEYFRAMES
 ***************************/
