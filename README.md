@@ -11,7 +11,10 @@ data.html
 --------
 The data.html file contains the sales data portion of the project. I created three charts to represent the data: Total Sales by Region, Average Quarterly Sales per Manager, and 2013-2014 Quarterly Sales. I used Google Visualization to create the charts. Each region has its own color scheme based on the Material Design palette. The main color is from the 300-level, with lighter and darker colors being used when needed for the color variations. When the user hovers over a data point they are able to get more information about that point. When the browser width is less than 740px, the charts will stack in order to make the charts easier to see. 
 
-## Chart Explanations ##
-** Total Sales by Region: ** Compares the total sales in each region  between 2013 and 2014.
-** Average Quarterly Sales per Manager: ** Finds each regional manager's average sales per quarter. The bars are color coded based on the region.
-** 2013-2014 Quarterly Sales: ** Plots each region's quarterly sales between 2013 and 2014.
+## Chart Explanations 
+#### Total Sales by Region
+Compares the total sales in each region  between 2013 and 2014.
+#### Average Quarterly Sales per Manager
+Finds each regional manager's average sales per quarter. The bars are color coded based on the region.
+#### 2013-2014 Quarterly Sales
+Plots each region's quarterly sales between 2013 and 2014.
