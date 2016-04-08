@@ -125,6 +125,7 @@ SCROLL
 	left: 0;
 	margin: 0;
 	justify-content: space-between;
+	z-index: 1;
 }
 
 .sticky .reg-nav__btn {
@@ -137,7 +138,13 @@ SCROLL
 }
 
 .sticky .reg-nav__logo img {
-	margin-left: 25px;
+	margin: 0 25px 0 15px;
+}
+
+.sticky .reg-nav__logo {
+	display: flex;
+	align-items: center;
+	font-weight: 300;
 }
 
 /***************************
@@ -400,6 +407,20 @@ SKILLS
 }
 
 /***************************
+EDUCATION
+***************************/
+
+.education {
+	width: 75%;
+	align-items: flex-start;
+	max-width: 458px;
+}
+
+.education .exp {
+	width: 95%;
+}
+
+/***************************
 CONTACT
 ***************************/
 
@@ -482,19 +503,28 @@ CONTACT
 /***************************
 CHARTS
 ***************************/
+.dashboard {
+	background-color: #212121;
+}
+
+.dashboard h1 {
+	text-align: center;
+	width: 100%;
+	color: #E0E0E0;
+	margin-top:70px;
+}
+
 .chart-flex {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	width: 100%;
 	height: 100%;
-	background-color: #212121;
+	margin-top: 80px;
 }
 
-
-
 .chart:first-child {
-	width: 60%;
+	width: 61%;
 	height: 40%;
 }
 
@@ -506,6 +536,7 @@ CHARTS
 .chart:nth-child(3) {
 	width: 90%;
 	height: 50%;
+	margin-top: -70px;
 }
 
 .chart h2 {
@@ -513,11 +544,59 @@ CHARTS
 	text-align: center;
 	color: #E0E0E0;
 	font-weight: 400;
+	font-size: 18px;
 }
 
 #quarter-sales, #avg-manager, #total-sales {
 	height: 100%;
 	margin-top: -50px;
+}
+
+
+/***************************
+MEDIA QUERIES
+***************************/
+
+@media screen and (max-width: 500px) {
+	.profile.flex, .experience.flex, .exp-contain, .skills.flex {
+		flex-direction: column;
+	}
+
+	.profile__text {
+		width: 80%;
+	}
+
+	.exp {
+		width: 95%;
+	}
+
+	.tech .skills__icon {
+		margin-left: -38px;
+	}
+
+	.tech .skills-list {
+		margin-left:0;
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.chart-flex {
+		flex-direction: column;
+		justify-content: center;
+		flex-wrap: nowrap;
+		align-items: center;
+		margin-top: 80px;
+	}
+
+	.chart:first-child, .chart:nth-child(2), .chart:nth-child(3) {
+		width: 100%;
+		height: 500px;
+		margin-top: 500px;
+	}
+
+	.chart:first-child {
+		margin-top:250px;
+	}
 }
 
 /***************************

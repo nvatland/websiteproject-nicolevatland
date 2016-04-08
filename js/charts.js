@@ -40,12 +40,12 @@ function drawChart() {
 		        max:25000,
 		        min:9000
 		      },
-	      textStyle: {color: '#E0E0E0'}
+	      textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		},
 		pointSize: 5,
 		backgroundColor: {fill: 'transparent'},
 		legend: {
-			textStyle: {color: '#E0E0E0'}
+			textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		}
 	};
 
@@ -80,22 +80,22 @@ function drawChart() {
 		        max:24000,
 		        min:13000
 		      },
-		      textStyle: {color: '#E0E0E0'}
+		      textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		},
 		vAxis: {
 			title: 'Manager',
-			textStyle: {color: '#E0E0E0'}
+			textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		},
 		backgroundColor: {fill: 'transparent'},
 		legend: 'none'
 	};
 
 	var total_sales = new google.visualization.arrayToDataTable([
-		['Region', '2013', {role: 'style'}, '2014', {role: 'style'}],
-		["South East", (14013 + 18600 + 23353 + 20756), '#AED581', (18378 + 22284 + 24473 + 16286), '#9CCC65'],
-		["North East", (24149 + 13119 + 23284 + 12697), '#4FC3F7', (18378 + 22284 + 24473 + 16286), '#29B6F6'],
-		["South West", (23409 + 13113 + 17097 + 21796), '#9575CD', (21630 + 19603 + 23947 + 22444), '#7E57C2'],
-		["North West", (22486 + 18383 + 19190 + 21011), '#F06292', (15282 + 16454 + 19653 + 10284), '#EC407A']
+		['Region', '2013', {role: 'style'}, { role: 'annotation' }, '2014', {role: 'style'}, { role: 'annotation' }],
+		["South East", (14013 + 18600 + 23353 + 20756), '#AED581', '2013', (18378 + 22284 + 24473 + 16286), '#9CCC65', '2014'],
+		["North East", (24149 + 13119 + 23284 + 12697), '#4FC3F7', '2013', (18378 + 22284 + 24473 + 16286), '#29B6F6', '2014'],
+		["South West", (23409 + 13113 + 17097 + 21796), '#9575CD', '2013', (21630 + 19603 + 23947 + 22444), '#7E57C2', '2014'],
+		["North West", (22486 + 18383 + 19190 + 21011), '#F06292', '2013', (15282 + 16454 + 19653 + 10284), '#EC407A', '2014']
 	]);
 	// total_sales.addColumn('string', 'Region');
 	// total_sales.addColumn('number', '2013');
@@ -105,17 +105,17 @@ function drawChart() {
 	// ]);
 
 	formatter.format(total_sales, 1);
-	formatter.format(total_sales, 2);
+	formatter.format(total_sales, 4);
 
 	var total_sales_options = {
 		hAxis: {
 			title: 'Region',
-			textStyle: {color: '#E0E0E0'}
+			textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		},
 		vAxis: {
 			title: 'Sales',
 			format: 'short',
-			textStyle: {color: '#E0E0E0'}
+			textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		},
 		backgroundColor: {fill: 'transparent'},
 		legend: 'none'
