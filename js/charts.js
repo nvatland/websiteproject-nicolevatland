@@ -14,7 +14,7 @@ function drawChart() {
 	quarter_sales.addColumn('number', 'North East');
 	quarter_sales.addColumn('number', 'South West');
 	quarter_sales.addColumn('number', 'North West');
-
+// Add sales data
 	quarter_sales.addRows([
 	    ['Q1',14013,24149,23409,22486],
 	    ['Q2',18600,13119,13113,18383],
@@ -25,7 +25,7 @@ function drawChart() {
 	    ['Q3',22473,23947,17919,19653],
 	    ['Q4', 21630,11436,15282,10284]
 	]);
-
+// Create chart options
 	var quarter_sales_options = {
 		hAxis: {
 		  title: 'Quarter',
@@ -48,7 +48,7 @@ function drawChart() {
 			textStyle: {color: '#E0E0E0', fontName: 'Lato'}
 		}
 	};
-
+// Format the numbers to currency
 	var formatter = new google.visualization.NumberFormat(
 	{prefix: '$'});
 
@@ -56,7 +56,8 @@ function drawChart() {
 	formatter.format(quarter_sales,2);
 	formatter.format(quarter_sales,3);
 	formatter.format(quarter_sales,4);
-
+// Create Average Quarterly Sales per Manager data table
+// The role: style attribute allows for the different colored bars
 	var avg_manager = google.visualization.arrayToDataTable([
 		['Manager', 'Average Sales', {role: 'style'}],
 		['John', ((14013 + 18600)/2), '#C5E1A5'],
@@ -68,9 +69,9 @@ function drawChart() {
 		['Ringo', 22486, '#F06292'],
 		['Raphael', ((18383 + 19190 + 21011 + 16454 + 19653 + 10284) / 6), '#EC407A']
 	]);
-
+// Format the numbers to currency
 	formatter.format(avg_manager, 1);
-
+// Create chart options
 	var avg_manager_options = {
 		hAxis: {
 			title: 'Sales',
@@ -89,7 +90,7 @@ function drawChart() {
 		backgroundColor: {fill: 'transparent'},
 		legend: 'none'
 	};
-
+// Create total sales data
 	var total_sales = new google.visualization.arrayToDataTable([
 		['Region', '2013', {role: 'style'}, { role: 'annotation' }, '2014', {role: 'style'}, { role: 'annotation' }],
 		["South East", (14013 + 18600 + 23353 + 20756), '#AED581', '2013', (18378 + 22284 + 24473 + 16286), '#9CCC65', '2014'],
@@ -97,16 +98,10 @@ function drawChart() {
 		["South West", (23409 + 13113 + 17097 + 21796), '#9575CD', '2013', (21630 + 19603 + 23947 + 22444), '#7E57C2', '2014'],
 		["North West", (22486 + 18383 + 19190 + 21011), '#F06292', '2013', (15282 + 16454 + 19653 + 10284), '#EC407A', '2014']
 	]);
-	// total_sales.addColumn('string', 'Region');
-	// total_sales.addColumn('number', '2013');
-	// total_sales.addColumn('number', '2014');
-
-	// total_sales.addRows([
-	// ]);
-
+// Format numbers to currency
 	formatter.format(total_sales, 1);
 	formatter.format(total_sales, 4);
-
+// Create chart options
 	var total_sales_options = {
 		hAxis: {
 			title: 'Region',
@@ -120,13 +115,13 @@ function drawChart() {
 		backgroundColor: {fill: 'transparent'},
 		legend: 'none'
 	}
-
+// Create the 2013-2014 quarter sales chart and bind it to the quarter-sales div
 	var quarter_sales_chart = new google.visualization.LineChart(document.getElementById('quarter-sales'));
 	quarter_sales_chart.draw(quarter_sales, quarter_sales_options);
-
+// Create the Average Quarterly Sales per Manager chart and bind it to the avg-manager div
 	var avg_manager_chart = new google.visualization.BarChart(document.getElementById('avg-manager'));
 	avg_manager_chart.draw(avg_manager, avg_manager_options);
-
+// Create the Total Sales by Region chart and bind it to the total-sales div
 	var total_sales_chart = new google.visualization.ColumnChart(document.getElementById('total-sales'));
 	total_sales_chart.draw(total_sales, total_sales_options);
 
