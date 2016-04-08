@@ -312,10 +312,12 @@ PROFILE
 /***************************
 EXPERIENCE
 ***************************/
+.resume-exp {
+	padding: 10% 0;
+}
 
 .experience {
 	width: 75%;
-	padding: 10% 0;
 }
 
 .header-blue {
@@ -340,7 +342,7 @@ EXPERIENCE
 .exp-text {
 	width: 85%;
 	padding-left: 8px;
-	align-items:left;
+	align-items:flex-start;
 }
 
 .exp__date {
